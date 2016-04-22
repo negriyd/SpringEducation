@@ -1,6 +1,7 @@
 package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -8,11 +9,9 @@ import org.springframework.stereotype.Component;
  * Created by dmitriyn on 4/22/16.
  */
 @Component
-@Scope("prototype")
 public class MyBeanSingleton {
     @Autowired
     private MyBeanDependency1 dependency1;
-    @Autowired
     private MyBeanDependency2 dependency2;
 
 
@@ -26,7 +25,7 @@ public class MyBeanSingleton {
         return dependency1;
     }
 
-
+    @Lookup
     public MyBeanDependency2 getDependency2() {
         return dependency2;
     }

@@ -9,16 +9,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringEducationApplicationTests {
-
 	@Autowired
 	private MyBeanSingleton myBean1;
-	@Autowired
-	private MyBeanSingleton myBean2;
 
 	@Test
 	public void contextLoads() {
 		System.out.println(myBean1);
-		System.out.println(myBean2);
+		System.out.println(myBean1);
 	}
 
 }
